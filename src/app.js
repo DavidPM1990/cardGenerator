@@ -5,7 +5,7 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-window.onload = function() {
+window.onload = function () {
   let countdown = 5;
 
   function getRandomNumber(min, max) {
@@ -44,7 +44,6 @@ window.onload = function() {
 
   const generateCardButton = document.getElementById("generateCardButton");
   const timerElement = document.getElementById("timer");
-
   const changeSizeButton = document.getElementById("changeSizeButton");
   const inputWidth = document.getElementById("inputWidth");
   const inputHeight = document.getElementById("inputHeight");
@@ -80,16 +79,14 @@ window.onload = function() {
     if (countdown === 0) {
       generateNewCard();
     } else {
-      // Reducimos el contador y programamos la próxima actualización
+
       countdown--;
-      timerTimeout = setTimeout(updateTimer, 1000); // Actualizar cada segundo
+      timerTimeout = setTimeout(updateTimer, 1000);
     }
   }
 
-  // Asignar el controlador de eventos al botón
   generateCardButton.addEventListener("click", generateNewCard);
 
-  // Generar la primera carta al cargar la página
   generateNewCard();
 
   function changeCardSize() {
@@ -114,11 +111,11 @@ window.onload = function() {
     );
 
     if (newWidth <= maxWidth && newHeight <= maxHeight) {
-      // Select the card element inside randomCardElement
+
       const cardElement = randomCardElement.querySelector(".card");
 
       if (cardElement) {
-        // Set the width and height of the card
+
         cardElement.style.width = newWidth + "px";
         cardElement.style.height = newHeight + "px";
       } else {
